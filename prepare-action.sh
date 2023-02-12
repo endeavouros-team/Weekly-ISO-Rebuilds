@@ -4,18 +4,16 @@ tag=22.12.2.2
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
 
-#load tarball of theISO and unpack it
+#load tarball of the ISO and unpack it
 wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/${tag}.tar.gz
 tar -xf ${tag}.tar.gz
+mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
 # patch run_before_squashfs.sh to remove github folder before squashfs:
-patch EndeavourOS-ISO-${tag}/run_before_squashfs.sh < run_before_squashfs.sh.patch
+patch EndeavourOS-ISO/run_before_squashfs.sh < run_before_squashfs.sh.patch
 
 # run preperations inside ISO structure
-cd EndeavourOS-ISO-${tag}
-
-# Copy packages from Build Calamares git packages into iso structure:
-#cp /home/build/packages/* airootfs/root/packages/
+cd EndeavourOS-ISO
 
 # Get mirrorlist for offline installs
 mkdir "airootfs/etc/pacman.d"

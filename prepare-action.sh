@@ -19,6 +19,9 @@ cd EndeavourOS-ISO
 mkdir "airootfs/etc/pacman.d"
 wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://gitlab.com/endeavouros-filemirror/PKGBUILDS/-/raw/master/endeavouros-mirrorlist/endeavouros-mirrorlist"
 
+# Get wallpaper for installed system
+wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/master/backgrounds/endeavouros-wallpaper.png"
+
 # Make sure build scripts are executable
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 

@@ -49,8 +49,8 @@ jobs:
         with:
          repo_name: endeavouros-team/development-iso-testing
          repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/unstable.tar.gz
-         asset_name: ${{ env.NOW }}-unstable.tar.gz
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-iso.tar.gz
+         asset_name: EndeavourOS-${{ env.NOW }}-iso.tar.gz
          tag: ${{ env.NOW }}
          prerelease: true
          overwrite: false

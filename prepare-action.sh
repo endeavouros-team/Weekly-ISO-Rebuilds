@@ -38,3 +38,4 @@ get_pkg "endeavouros-skel-xfce4"
 chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
 cd "airootfs/root/endeavouros-skel-liveuser"
 sudo -u build makepkg -f
+cd /

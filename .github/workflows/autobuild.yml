@@ -54,4 +54,4 @@ jobs:
          tag: ${{ env.NOW }}
          prerelease: true
          overwrite: false
-         body: "latest unstable iso"
+         body: "latest weekly iso"

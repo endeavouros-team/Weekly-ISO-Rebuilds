@@ -22,6 +22,9 @@ wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://gitlab.com/endeavo
 # Make sure build scripts are executable
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
+# create build user
+useradd -m -G wheel -s /bin/bash build
+
 # Build liveuser skel
 get_pkg() {
     pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages"

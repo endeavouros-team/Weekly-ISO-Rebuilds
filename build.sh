@@ -1,6 +1,7 @@
 #!/bin/sh
 
 cd "EndeavourOS-ISO"
+pacman -Sy networkmanager
 ./mkarchiso "."
 ls out/ > /tmp/isoname
 cd out/

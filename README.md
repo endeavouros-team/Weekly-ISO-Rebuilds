@@ -1,6 +1,5 @@
-# isotesters
+# ISO Release Rebuilder
+
+[![Build EndeavourOS devel ISO](https://github.com/killajoe/iso-weekly-autobuild/actions/workflows/autobuild.yml/badge.svg?event=status)](https://github.com/killajoe/iso-weekly-autobuild/actions/workflows/autobuild.yml)
+
 --ISO build automation--
-
-GitHub action and needed scripts:
-
-action that builds the ISO directly from latest EndeavourOS-ISO sources (git) together with latest development packages for calamares (installer).

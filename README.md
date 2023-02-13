@@ -5,3 +5,5 @@ https://github.com/endeavouros-team/EndeavourOS-ISO
 
 You will find the ISOs here:
 https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
+
+[![Automatically building EndeavourOS ISO](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml/badge.svg?event=watch)](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml)

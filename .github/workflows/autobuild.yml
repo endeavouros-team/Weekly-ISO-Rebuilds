@@ -47,7 +47,7 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
-         repo_name: endeavouros-team/development-iso-testing
+         repo_name: killajoe/iso-weekly-autobuild
          repo_token: ${{ secrets.ACCESS_TOKEN }}
          file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-iso.tar.gz
          asset_name: EndeavourOS-${{ env.NOW }}-iso.tar.gz

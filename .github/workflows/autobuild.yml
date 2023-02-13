@@ -1,4 +1,4 @@
-name: Build EndeavourOS devel ISO
+name: Automatically building EndeavourOS ISO
 
 on:
   schedule:

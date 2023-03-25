@@ -13,7 +13,7 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 patch EndeavourOS-ISO/run_before_squashfs.sh < run_before_squashfs.sh.patch
 
 # get missing wallpaper 
-cp livewall.png "airootfs/root/"
+cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO

@@ -37,9 +37,6 @@ jobs:
         
       - name: Build ISO
         run: bash build.sh
-                
-      - name: create iso package versions file
-        run: bash iso_package_versions.sh 
           
       - name: Upload a backup to server
         run: "curl -g -k -T EndeavourOS-ISO/out/iso_package_versions ${{secrets.SERVER_STRING_PRIVATE}} && curl -g -k -T EndeavourOS-ISO/out/*.sha512sum ${{secrets.SERVER_STRING_PRIVATE}} && curl -g -k -T EndeavourOS-ISO/out/*.iso ${{secrets.SERVER_STRING_PRIVATE}}"

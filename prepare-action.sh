@@ -24,6 +24,8 @@ cd EndeavourOS-ISO
 # Get mirrorlist for offline installs
 mkdir "airootfs/etc/pacman.d"
 wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
+# use it also for building ISO
+cp "airootfs/etc/pacman.d/mirrorlist" "/etc/pacman.d/mirrorlist"
 
 # Get wallpaper for installed system
 wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/master/backgrounds/endeavouros-wallpaper.png"

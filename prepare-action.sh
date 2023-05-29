@@ -16,7 +16,7 @@ patch EndeavourOS-ISO/run_before_squashfs.sh < run_before_squashfs.sh.patch
 cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
 # fetch updated pacman.conf
-wget -qN --show-progress -P "airootfs/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf"
+wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO

@@ -1,7 +1,7 @@
 favorites=eos-log-tool.desktop,gparted.desktop,calamares.desktop,thunar.desktop,xfce4-terminal.desktop,org.xfce.ristretto.desktop,firefox.desktop,org.xfce.Parole.desktop,xfce4-screenshooter.desktop,galculator.desktop,xfce4-taskmanager.desktop,grsync.desktop
 recent=
 button-title=\ EndeavourOS\ \ 
-button-icon=endeavouros-icon
+button-icon=/usr/share/endeavouros/EndeavourOS-icon.png
 button-single-row=false
 show-button-title=true
 show-button-icon=true

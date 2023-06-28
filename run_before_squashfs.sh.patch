@@ -1,5 +1,5 @@
---- run_before_squashfs.sh	2023-02-12 23:07:56.396361665 +0100
-+++ run_before_squashfs.sh.patched	2023-02-12 23:10:49.024387189 +0100
+--- run_before_squashfs.sh	2023-02-08 16:34:29.000000000 +0100
++++ run_before_squashfs.sh.new	2023-06-28 20:36:30.614020074 +0200
 @@ -28,7 +28,7 @@
  # Init & Populate keys
  pacman-key --init
@@ -9,8 +9,20 @@
  
  # Install liveuser skel (in case of conflicts use overwrite)
  pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
-@@ -86,11 +86,12 @@
+@@ -84,13 +84,24 @@
+ mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
+ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
  
++
++# [hardwaredetect] Do not return error if hardware detection fails
++wget -qN --show-progress -P  "/usr/lib/calamares/modules/hardwaredetect/main.py" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
++# [packagechooser_ce.conf] remove xcursor-neutral package from getting installed (removed from repo)
++sed -i '/            - xcursor-neutral/d' "/etc/calamares/"
++# [packagechooser_ce.conf] exchange ttf-nerd-fonts-symbols-2048-em to ttf-nerd-fonts-symbols (name change)
++sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' "/etc/calamares/modules/packagechooser_ce.conf"
++# [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed
++sed -i '/^    - x-apps.*/ a\    - xdg-desktop-portal-gtk' "/etc/calamares/modules/netinstall.yaml"
++
  # Get extra drivers!
  mkdir "/opt/extra-drivers"
 -sudo pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168

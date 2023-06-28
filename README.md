@@ -5,6 +5,8 @@
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
 https://github.com/endeavouros-team/EndeavourOS-ISO
 
+Will now include current needed hot-fixes on the ISO.
+
 You will find the ISOs here:
 https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
 

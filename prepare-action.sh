@@ -5,12 +5,15 @@ tag=22.12.2.2
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
 
 #load tarball of the ISO and unpack it
-wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/${tag}.tar.gz
+wget "https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/${tag}.tar.gz"
 tar -xf ${tag}.tar.gz
 mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
-# patch run_before_squashfs.sh to remove github folder before squashfs:
-patch EndeavourOS-ISO/run_before_squashfs.sh < run_before_squashfs.sh.patch
+# full icon path needed for whisker menu
+cp whiskermenu-18.rc "EndeavourOS-ISO/airootfs/root/endeavouros-skel-liveuser/src/etc/skel/.config/xfce4/panel/"
+
+# patch run_before_squashfs.sh to remove github folder before squashfs, adding current hot-fixes to be inside ISO
+patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
 # get missing wallpaper 
 cp livewall.png "EndeavourOS-ISO/airootfs/root/"

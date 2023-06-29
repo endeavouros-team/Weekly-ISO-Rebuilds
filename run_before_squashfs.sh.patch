@@ -15,7 +15,7 @@
  
 +
 +# [hardwaredetect] Do not return error if hardware detection fails
-+wget -qN --show-progress -P  "/usr/lib/calamares/modules/hardwaredetect/main.py" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
++wget -qN --show-progress -P  "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
 +# [packagechooser_ce.conf] remove xcursor-neutral package from getting installed (removed from repo)
 +sed -i '/            - xcursor-neutral/d' "/etc/calamares/"
 +# [packagechooser_ce.conf] exchange ttf-nerd-fonts-symbols-2048-em to ttf-nerd-fonts-symbols (name change)

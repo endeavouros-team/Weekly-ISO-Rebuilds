@@ -17,7 +17,7 @@
 +# [hardwaredetect] Do not return error if hardware detection fails
 +wget -qN --show-progress -P  "/usr/lib/calamares/modules/hardwaredetect/" "https://raw.githubusercontent.com/endeavouros-team/calamares/01aeb60d05c864bacc926f718686c27c69b84f49/src/modules/hardwaredetect/main.py"
 +# [packagechooser_ce.conf] remove xcursor-neutral package from getting installed (removed from repo)
-+sed -i '/            - xcursor-neutral/d' "/etc/calamares/"
++sed -i '/            - xcursor-neutral/d' "/etc/calamares/modules/packagechooser_ce.conf"
 +# [packagechooser_ce.conf] exchange ttf-nerd-fonts-symbols-2048-em to ttf-nerd-fonts-symbols (name change)
 +sed -i 's/ttf-nerd-fonts-symbols-2048-em/ttf-nerd-fonts-symbols/g' "/etc/calamares/modules/packagechooser_ce.conf"
 +# [netinstall.yaml] fix cinnamon to not get xdg-desktop-portal-gnome installed

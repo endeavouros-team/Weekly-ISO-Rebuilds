@@ -10,7 +10,7 @@ tar -xf ${tag}.tar.gz
 mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
 # fetch calamares package for testing
-wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://github.com/endeavouros-team/testing-packages/releases/download/29-6-23/calamares-22.12.3.6-3-any.pkg.tar.zst"
+#wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://github.com/endeavouros-team/testing-packages/releases/download/29-6-23/calamares-22.12.3.6-3-any.pkg.tar.zst"
 
 # full icon path needed for whisker menu
 cp whiskermenu-18.rc "EndeavourOS-ISO/airootfs/root/endeavouros-skel-liveuser/src/etc/skel/.config/xfce4/panel/"

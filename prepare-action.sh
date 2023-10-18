@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-tag=22.12.2.2
+tag=23.10.1
 
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
@@ -13,10 +13,10 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 #wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://github.com/endeavouros-team/testing-packages/releases/download/29-6-23/calamares-22.12.3.6-3-any.pkg.tar.zst"
 
 # full icon path needed for whisker menu
-cp whiskermenu-18.rc "EndeavourOS-ISO/airootfs/root/endeavouros-skel-liveuser/src/etc/skel/.config/xfce4/panel/"
+#cp whiskermenu-18.rc "EndeavourOS-ISO/airootfs/root/endeavouros-skel-liveuser/src/etc/skel/.config/xfce4/panel/"
 
 # patch run_before_squashfs.sh to remove github folder before squashfs, adding current hot-fixes to be inside ISO
-patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
+#patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
 # get missing wallpaper 
 cp livewall.png "EndeavourOS-ISO/airootfs/root/"
@@ -47,7 +47,7 @@ get_pkg() {
     pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages"
 }
 
-get_pkg "endeavouros-skel-xfce4"
+get_pkg "eos-settings-plasma"
 
 chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
 cd "airootfs/root/endeavouros-skel-liveuser"

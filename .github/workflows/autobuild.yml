@@ -41,17 +41,17 @@ jobs:
       #- name: Upload a backup to server
       #  run: "curl -g -k -T EndeavourOS-ISO/out/iso_package_versions ${{secrets.SERVER_STRING_PRIVATE}} && curl -g -k -T EndeavourOS-ISO/out/*.sha512sum ${{secrets.SERVER_STRING_PRIVATE}} && curl -g -k -T EndeavourOS-ISO/out/*.iso ${{secrets.SERVER_STRING_PRIVATE}}"
         
-      - name: archive for release
-        run: cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/ && cd EndeavourOS-ISO/out && tar -czvf EndeavourOS-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log
+      #- name: archive for release
+      #  run: cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/ && cd EndeavourOS-ISO/out && tar -czvf EndeavourOS-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log
     
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
-        with:
-         #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
-         repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-iso.tar.gz
-         asset_name: EndeavourOS-${{ env.NOW }}-iso.tar.gz
-         tag: ${{ env.NOW }}
-         prerelease: false
-         overwrite: true
-         body: "latest weekly iso"
+      #- name: Upload binaries to release
+      #  uses: svenstaro/upload-release-action@v2
+      #  with:
+      #   #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
+      #   repo_token: ${{ secrets.ACCESS_TOKEN }}
+      #   file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-iso.tar.gz
+      #   asset_name: EndeavourOS-${{ env.NOW }}-iso.tar.gz
+      #   tag: ${{ env.NOW }}
+      #   prerelease: false
+      #   overwrite: true
+      #   body: "latest weekly iso"

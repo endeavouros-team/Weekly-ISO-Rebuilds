@@ -2,6 +2,8 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
+### currently on hold for release changes.
+
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
 https://github.com/endeavouros-team/EndeavourOS-ISO
 

@@ -42,8 +42,8 @@ chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 # create build user
 #useradd -m -G wheel -s /bin/bash build
 useradd -m build
-printf "builduser ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
-        chown -R builduser:builduser ./
+printf "build ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
+        chown -R build:build ./
 
 # Build liveuser skel
 get_pkg() {
@@ -57,7 +57,7 @@ chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
 get_pkg() {
     sudo pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages" \
-    && sudo chown $USER:$USER "airootfs/root/packages/"*".pkg.tar"*
+    && sudo chown build:build "airootfs/root/packages/"*".pkg.tar"*
 }
 
 get_pkg "eos-settings-plasma"

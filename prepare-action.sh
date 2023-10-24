@@ -40,7 +40,10 @@ wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
 # create build user
-useradd -m -G wheel -s /bin/bash build
+#useradd -m -G wheel -s /bin/bash build
+useradd -m build
+printf "builduser ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
+        chown -R builduser:builduser ./
 
 # Build liveuser skel
 get_pkg() {
@@ -49,6 +52,7 @@ get_pkg() {
 
 get_pkg "eos-settings-plasma"
 
-chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
-cd "airootfs/root/endeavouros-skel-liveuser"
-sudo -u build makepkg -f
+sudo -u builduser bash ./prepare.sh
+#chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
+#cd "airootfs/root/endeavouros-skel-liveuser"
+#sudo -u build makepkg -f

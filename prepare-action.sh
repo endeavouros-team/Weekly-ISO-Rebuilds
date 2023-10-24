@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-tag=23.10.1
+tag=23.10.1.1
 
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git

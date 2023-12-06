@@ -1,0 +1,12 @@
+--- run_before_squashfs.sh	2023-12-06 15:06:10.703693972 +0100
++++ run_before_squashfs.sh.patched	2023-12-06 15:09:17.340895375 +0100
+@@ -76,6 +76,9 @@
+ 
+ # TEMPORARY CUSTOM FIXES
+ 
++#fix package name changes for kde installs (online) [06.12.2023]
++sed -i 's/    - kgamma5/    - kgamma/g' /etc/calamares/modules/packagechooser.conf
++
+ # Fix for getting bash configs installed
+ cp -af "/home/liveuser/"{".bashrc",".bash_profile"} "/etc/skel/"
+ 

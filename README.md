@@ -15,4 +15,3 @@ Will now include current needed hot-fixes on the ISO.
 You will find the ISOs here:
 [https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases](http://endeavour.kamprad.net/weekly-iso/)
 
-#![autobuild](https://img.shields.io/github/v/release/endeavouros-team/Weekly-ISO-Rebuilds?logo=github)

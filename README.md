@@ -10,6 +10,7 @@ https://github.com/endeavouros-team/EndeavourOS-ISO
 **These ISOs are not the default recommended ISOs to use!**
 
 They are not tested in the same way as the default release ISO!
+
 You can get latest released and tested ISO here:
 
 https://endeavouros.com/latest-release/

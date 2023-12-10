@@ -2,7 +2,6 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
-### weekly rebuilds for Galileo Release needs a new download path, we can not store them on GitHub Releases.
 
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
 https://github.com/endeavouros-team/EndeavourOS-ISO
@@ -14,6 +13,6 @@ https://endeavouros.com/latest-release/
 Will now include current needed hot-fixes on the ISO.
 
 You will find the ISOs here:
-https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
+[https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases](http://endeavour.kamprad.net/weekly-iso/)
 
-![autobuild](https://img.shields.io/github/v/release/endeavouros-team/Weekly-ISO-Rebuilds?logo=github)
+#![autobuild](https://img.shields.io/github/v/release/endeavouros-team/Weekly-ISO-Rebuilds?logo=github)

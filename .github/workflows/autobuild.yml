@@ -1,4 +1,4 @@
-name: Automatically building EndeavourOS ISO
+name: Weekly EndeavourOS ISO rebuilds
 
 on:
   schedule:

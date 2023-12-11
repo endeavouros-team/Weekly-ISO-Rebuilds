@@ -5,7 +5,7 @@
 
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
 
-[![Automatically building EndeavourOS ISO](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml/badge.svg)](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml)
+[![Weekly EndeavourOS ISO rebuilds](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml/badge.svg?branch=main)](https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/actions/workflows/autobuild.yml)
 
 https://github.com/endeavouros-team/EndeavourOS-ISO
 

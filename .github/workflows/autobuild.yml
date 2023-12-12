@@ -25,7 +25,7 @@ jobs:
         run: echo "NOW=$(date +'%Y-%m-%d_%H-%M')" >> $GITHUB_ENV
 
       - name: Update packages and install archiso
-        run: "pacman -Syu --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack"
+        run: "pacman -Syu --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack mktorrent"
                       
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS.sh

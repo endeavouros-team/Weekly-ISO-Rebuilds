@@ -8,5 +8,5 @@ pacman-key --init && pacman-key --recv-key 0F20FADC599D1C46EB556455AED8858E4B981
 pacman-key --init
 pacman -Sy --noconfirm endeavouros-keyring 
 pacman -S --noconfirm endeavouros-mirrorlist
-pacman -S reflector
+pacman -S --noconfirm reflector
 reflector --age 2 --number 23 --country DE,US --save /etc/pacman.d/mirrorlist

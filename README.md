@@ -14,7 +14,7 @@ Will now include current needed hot-fixes on the ISO.
 
 You will find the ISOs here:
 
-**current in search for new location to share**
+**currently in search for new location to share**
 
 ---
 

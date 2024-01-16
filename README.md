@@ -14,7 +14,7 @@ Will now include current needed hot-fixes on the ISO.
 
 You will find the ISOs here:
 
-[endeavouros-team/Weekly-ISO-Rebuilds](https://endeavour.kamprad.net/weekly-iso/)
+**current in search for new location to share**
 
 ---
 

@@ -48,10 +48,9 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
-      #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
+         #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
          repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.001 EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.002 EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.003
-         asset_name: EndeavourOS-${{ env.NOW }}-iso.tar.gz
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.00*
          tag: ${{ env.NOW }}
          prerelease: false
          overwrite: true

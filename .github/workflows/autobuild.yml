@@ -28,7 +28,7 @@ jobs:
         run: bash add-EndeavourOS.sh
         
       - name: Update packages and install archiso
-        run: "pacman -Syu --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack mktorrent"
+        run: "pacman -Syu --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack mktorrent p7zip"
       
       #- name: Build Calamares git packages
         #run: bash build-packages.sh

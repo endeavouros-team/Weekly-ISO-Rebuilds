@@ -1,6 +1,6 @@
 ISO split in 3 parts using 7zip
 
-`7z a -v1024m -mx0 EndeavourOS-Galileo-2024.01.21.iso.tar.gz.7z EndeavourOS-Galileo-Neo-2024.01.21.iso`
+`7z a -v1024m -mx0 EndeavourOS-Galileo-2024.01.21.iso.7z EndeavourOS-Galileo-Neo-2024.01.21.iso`
 
 Download all 5 files into one folder:
 

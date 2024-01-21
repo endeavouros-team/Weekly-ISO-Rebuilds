@@ -43,7 +43,7 @@ jobs:
       #  run: "curl -g -k -T EndeavourOS-ISO/out/*.sha512sum -u ${{secrets.SERVER_STRING_WEEKLY}} && curl -g -k -T EndeavourOS-ISO/out/*.iso -u ${{secrets.SERVER_STRING_WEEKLY}} && curl -g -k -T EndeavourOS-ISO/out/*.iso.torrent -u ${{secrets.SERVER_STRING_WEEKLY}}"
         
       - name: archive for release
-        run: cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/ && cd EndeavourOS-ISO/out && tar -czvf EndeavourOS-${{ env.NOW }}-iso.tar.gz *.sha512sum *.iso *.log && 7z a -v1024m -mx0 EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z EndeavourOS-${{ env.NOW }}.iso.tar.gz
+        run: cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/ && cd EndeavourOS-ISO/out && tar -czvf EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz *.sha512sum *.iso *.log && 7z a -v1024m -mx0 EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz.7z EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz
          
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2

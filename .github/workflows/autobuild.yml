@@ -50,7 +50,9 @@ jobs:
         with:
          #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
          repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.00*
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.001
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.002
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}.iso.tar.gz.7z.003
          tag: ${{ env.NOW }}
          prerelease: false
          overwrite: true

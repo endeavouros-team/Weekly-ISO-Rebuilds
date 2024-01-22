@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Set current date and hour as environment variable
-        run: echo "NOW=$(date +'%Y-%m-%d_%H-%M')" >> $GITHUB_ENV
+        run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
                       
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS.sh
@@ -50,7 +50,7 @@ jobs:
         with:
          #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
          repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-x86_64.7z.00*
+         file: EndeavourOS-ISO/out/EndeavourOS-${{ env.NOW }}-x86_64.iso.7z.00*
          tag: ${{ env.NOW }}
          prerelease: false
          overwrite: true

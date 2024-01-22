@@ -17,3 +17,6 @@ tar -czvf $isoname.tar.gz *.sha512sum *.iso *.log
 #*.torrent
 # split ISO in 3 
 7z a -v1024m -mx0 $isoname.7z $isoname.tar.gz
+files=$(ls out/)
+echo $files
+

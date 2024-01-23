@@ -50,7 +50,7 @@ jobs:
         with:
          #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
          repo_token: ${{ secrets.ACCESS_TOKEN }}
-         file: EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.00*
+         file: EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.00*
          tag: ${{ env.NOW }}
          prerelease: false
          overwrite: true

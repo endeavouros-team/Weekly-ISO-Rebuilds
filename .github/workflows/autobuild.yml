@@ -63,5 +63,7 @@ jobs:
           prerelease: false
           title: "Development Build"
           files: |
-                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.00*
+                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.001
+                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.002
+                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.003
         id: "weekly-iso-rebuild"

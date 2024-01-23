@@ -61,9 +61,9 @@ jobs:
           repo_token: "${{ secrets.ACCESS_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
-          title: "Development Build"
+          title: "Weekly Rebuild ${{ env.NOW }}"
           files: |
-                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.001
-                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.002
-                 EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.003
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.001
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.002
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.003
         id: "weekly-iso-rebuild"

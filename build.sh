@@ -19,7 +19,3 @@ tar -czvf $isoname.tar.gz *.sha512sum *.iso *.log
 7z a -v1024m -mx0 $isoname.7z $isoname.tar.gz
 files=$(ls)
 echo $files
-cp $isoname.7z.001 $isoname.7z.002 $isoname.7z.003 /
-cd /
-files2=$(ls)
-echo $files2

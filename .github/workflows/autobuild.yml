@@ -45,7 +45,7 @@ jobs:
       #- name: archive for release
       #  run: cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/ && cd EndeavourOS-ISO/out && tar -czvf EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz *.sha512sum *.iso *.log && 7z a -v1024m -mx0 EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz.7z EndeavourOS-${{ env.NOW }}-x86_64.iso.tar.gz
          
-      - name: Upload binaries to release 🔧
+      - name: Upload binaries to release
       #  uses: svenstaro/upload-release-action@v2
       #  with:
       #   #repo_name: endeavouros-team/Weekly-ISO-Rebuilds
@@ -59,7 +59,9 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.ACCESS_TOKEN }}"
+          automatic_release_tag: "latest"
           prerelease: false
+          title: "Development Build"
           files: |
                  EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.00*
         id: "weekly-iso-rebuild"

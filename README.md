@@ -34,7 +34,7 @@ you may need to install 7zip
 
 ## Disclaimer:
 
-**These ISOs are not the default recommended ISOs to use!**
+## These ISOs are not the default recommended ISOs to use!
 
 They are not tested in the same way as the default release ISO!
 

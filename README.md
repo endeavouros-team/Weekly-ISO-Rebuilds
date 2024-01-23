@@ -27,7 +27,9 @@ and run this to create ISO (combine):
 ```
 7z x EndeavourOS-Releasename-Date.iso.7z.001
 ```
-you may need to install 7zip ` sudo pacman -Syu p7zip` 
+you may need to install 7zip 
+` sudo pacman -Syu p7zip` 
+
 ---
 
 **These ISOs are not the default recommended ISOs to use!**

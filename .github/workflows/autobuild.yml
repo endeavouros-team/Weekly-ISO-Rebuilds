@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Set current date and hour as environment variable
-        run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
                       
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS.sh

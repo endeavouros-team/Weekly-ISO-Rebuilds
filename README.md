@@ -32,7 +32,9 @@ and run this to create ISO (combine):
 ```
 you may need to install 7zip 
 
-`sudo pacman -Syu p7zip` 
+`sudo pacman -Syu p7zip`
+
+And you need to replace "Releasename-Date" with the current Release Name and build date .. as you can see in the released files..
 
 ---
 

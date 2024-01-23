@@ -14,8 +14,20 @@ Will now include current needed hot-fixes on the ISO.
 
 You will find the ISOs here:
 
-**currently in search for new location to share**
+https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
 
+Download this 3 files into one folder:
+
+* EndeavourOS-Releasename-Date.iso.7z.001
+* EndeavourOS-Releasename-Date.iso.7z.002
+* EndeavourOS-Releasename-Date.iso.7z.003
+
+and run this to create ISO (combine):
+
+```
+7z x EndeavourOS-Releasename-Date.iso.7z.001
+```
+you may need to install 7zip ` sudo pacman -Syu p7zip` 
 ---
 
 **These ISOs are not the default recommended ISOs to use!**

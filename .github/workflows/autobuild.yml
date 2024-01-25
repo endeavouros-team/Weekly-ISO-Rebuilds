@@ -63,7 +63,7 @@ jobs:
           prerelease: false
           title: "Weekly Rebuild ${{ env.NOW }}"
           files: |
-                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.001
-                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.002
-                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.7z.003
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-aa
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-ab
+                 EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-ac
         id: "weekly-iso-rebuild"

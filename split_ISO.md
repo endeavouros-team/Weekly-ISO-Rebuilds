@@ -18,7 +18,7 @@ Using program split instead of 7z because split is readily available in coreutil
 
 Usage:
 
-# split an ISO into 1700MB pieces
+# split an ISO into 1GB pieces
 
 
 ```

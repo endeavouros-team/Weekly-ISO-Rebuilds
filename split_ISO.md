@@ -23,7 +23,6 @@ Usage:
 
 ```
 split -b1024M Endeavouros-Galileo-11-2023.iso Endeavouros-Galileo-11-2023.iso.split-
-
 ```
 
 # combine pieces back into an ISO
@@ -31,5 +30,4 @@ split -b1024M Endeavouros-Galileo-11-2023.iso Endeavouros-Galileo-11-2023.iso.sp
 
 ```
 cat Endeavouros-Galileo-11-2023.iso.split-* > Endeavouros-Galileo-11-2023.iso
-
 ```

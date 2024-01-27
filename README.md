@@ -21,18 +21,14 @@ Check for latest release there!
 
 Download this 3 files into one folder:
 
-* EndeavourOS-Releasename-Date.iso.7z.001
-* EndeavourOS-Releasename-Date.iso.7z.002
-* EndeavourOS-Releasename-Date.iso.7z.003
+* EndeavourOS_Releasename-Date-x86_64.iso.split-aa
+* EndeavourOS_Releasename-Date-x86_64.iso.split-ab
+* EndeavourOS_Releasename-Date-x86_64.iso.split-ac
 
 and run this to create ISO (combine):
+combine pieces back into an ISO
 
-```
-7z x EndeavourOS-Releasename-Date.iso.7z.001
-```
-you may need to install 7zip 
-
-`sudo pacman -Syu p7zip`
+cat Endeavouros-Releasename-Date-x86_64.iso.split-* > Endeavouros-Releasename-Date-x86_64.iso
 
 And you need to replace "Releasename-Date" with the current Release Name and build date .. as you can see in the released files..
 

@@ -14,9 +14,6 @@ isoname=$(cat /tmp/isoname)
 sha512sum $isoname > $isoname.sha512sum
 #mktorrent --announce=udp://tracker.openbittorrent.com:80 -a udp://tracker.torrent.eu.org:451/announce -a udp://thetracker.org:80/announce -a udp://tracker.dutchtracking.com:6969/announce -a udp://tracker.opentrackr.org:1337/announce -c $isoname -n $isoname -o $isoname.torrent -v $isoname -w https://endeavour.kamprad.net/weekly-iso/$isoname
 tar -czvf $isoname.tar.gz *.sha512sum *.iso *.log 
-#*.torrent
-# split ISO in 3 
-#7z a -v1024m -mx0 $isoname.7z $isoname.tar.gz
 split -b1024M $isoname $isoname.split-
 files=$(ls)
 echo $files

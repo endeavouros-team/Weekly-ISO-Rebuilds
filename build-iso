@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 #cp "run_before_squashfs.sh.patch" "EndeavourOS-ISO/"
 #cp "packages.x86_64.patch" "EndeavourOS-ISO/"
 #cp "mkarchiso.patch" "EndeavourOS-ISO/"

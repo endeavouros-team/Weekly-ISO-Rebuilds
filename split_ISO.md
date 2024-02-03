@@ -1,5 +1,4 @@
-ISO split in 3 parts
-`7z a -v1024m -mx0 EndeavourOS-Releasename-Date.iso.7z EndeavourOS-Releasename-Date.iso`
+# ISO split in 3 parts
 
 Download all 5 files into one folder:
  

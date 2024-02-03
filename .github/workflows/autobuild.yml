@@ -25,16 +25,16 @@ jobs:
         run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
                       
       - name: Add EndeavourOS Repo
-        run: bash add-EndeavourOS.sh
+        run: bash add-EndeavourOS
         
       - name: Update packages and install archiso
         run: "pacman -Syu --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack mktorrent p7zip"
         
       - name: preparations to build ISO
-        run: bash prepare-action.sh 
+        run: bash prepare-action
         
       - name: Build ISO
-        run: bash build.sh
+        run: bash build-iso
          
       - name: Upload binaries to release
         uses: "marvinpinto/action-automatic-releases@latest"

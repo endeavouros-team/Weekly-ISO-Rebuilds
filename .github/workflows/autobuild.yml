@@ -47,4 +47,4 @@ jobs:
                  EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-aa
                  EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-ab
                  EndeavourOS-ISO/out/EndeavourOS_Galileo-${{ env.NOW }}-x86_64.iso.split-ac
-        id: "weekly-iso-rebuild"
+          id: "weekly-iso-rebuild"

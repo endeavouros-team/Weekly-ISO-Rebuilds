@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # setting up EndeavourOS repo:
 # try fix for current keyring issue (1.1.2024)
 pacman-key --init && pacman -Syu --noconfirm && pacman -Syu base-devel --noconfirm

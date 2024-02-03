@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 pacman -Qs | grep "/calamares " | cut -c7- > iso_package_versions
 pacman -Qs | grep "/firefox " | cut -c7- >> iso_package_versions
 pacman -Qs | grep "/linux " | cut -c7- >> iso_package_versions

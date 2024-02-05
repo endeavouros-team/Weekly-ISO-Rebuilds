@@ -1,5 +1,7 @@
 name: clean up workflows
 on:
+  schedule:
+    - cron: "0 0 */7 * *"
   workflow_dispatch:
 jobs:
   delete_runs:

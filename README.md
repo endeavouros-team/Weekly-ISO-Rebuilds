@@ -26,11 +26,12 @@ Download this 3 files into one folder:
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ac
 
 and run this to create ISO (combine):
-combine pieces back into an ISO
 
+```
 cat Endeavouros-Releasename-Date-x86_64.iso.split-* > Endeavouros-Releasename-Date-x86_64.iso
+```
 
-And you need to replace "Releasename-Date" with the current Release Name and build date .. as you can see in the released files..
+You need to replace "Releasename-Date" with the current Release Name and build date .. as you can see in the released files..
 
 ---
 

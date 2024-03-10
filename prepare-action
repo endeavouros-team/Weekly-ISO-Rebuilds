@@ -19,8 +19,8 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 # patch run_before_squashfs.sh to remove github folder before squashfs, adding current hot-fixes to be inside ISO
 #patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
-# get missing wallpaper 
-cp livewall.png "EndeavourOS-ISO/airootfs/root/"
+# get missing live session wallpaper 
+# cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
 # fetch updated pacman.conf
 #wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf"

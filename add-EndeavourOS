@@ -3,7 +3,7 @@
 # setting up EndeavourOS repo:
 # try fix for current keyring issue (1.1.2024)
 pacman-key --init && pacman -Syu --noconfirm && pacman -Syu base-devel --noconfirm
-pacman -Sy --noconfirm --needed archlinux-keyring
+pacman -Sy --noconfirm --needed archlinux-keyring wget
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf
 cp pacman.conf /etc/pacman.conf
 wget https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/master/endeavouros-mirrorlist/endeavouros-mirrorlist

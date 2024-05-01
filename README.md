@@ -2,7 +2,6 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
 
-## ... on hold caused by PLASMA 6 update .... --> on wait till next ISO release ......
 
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
 

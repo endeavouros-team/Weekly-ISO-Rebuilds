@@ -1,0 +1,18 @@
+--- settings_online.conf	2024-06-23 17:30:46.000000000 +0200
++++ settings_online.conf.patched	2024-07-14 22:44:04.145060856 +0200
+@@ -57,7 +57,6 @@
+   - shellprocess@initialize_pacman
+   - pacstrap
+   - machineid
+-  - fstab
+   - locale
+   - keyboard
+   - localecfg
+@@ -65,6 +64,7 @@
+   - packages@online
+   - luksbootkeyfile
+   - dracutlukscfg
++  - fstab
+   - users
+   - networkcfg
+   - displaymanager

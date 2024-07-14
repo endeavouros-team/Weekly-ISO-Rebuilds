@@ -13,4 +13,4 @@ pacman-key --init
 pacman -Sy --noconfirm endeavouros-keyring 
 pacman -S --noconfirm endeavouros-mirrorlist
 pacman -S --noconfirm reflector
-reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
+reflector --verbose -c DE -c US --protocol https --protocol http --sort rate --latest 20 --download-timeout 5 --threads 5 --save /etc/pacman.d/mirrorlist

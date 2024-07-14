@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tag=24.04.1.2
+tag=24.06.1.2
 
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
@@ -12,9 +12,6 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
 # fetch calamares package for testing
 #wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://github.com/endeavouros-team/testing-packages/releases/download/29-6-23/calamares-22.12.3.6-3-any.pkg.tar.zst"
-
-# full icon path needed for whisker menu
-#cp whiskermenu-18.rc "EndeavourOS-ISO/airootfs/root/endeavouros-skel-liveuser/src/etc/skel/.config/xfce4/panel/"
 
 # patch run_before_squashfs.sh to remove github folder before squashfs, adding current hot-fixes to be inside ISO
 #patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch

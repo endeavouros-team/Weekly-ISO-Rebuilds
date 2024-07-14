@@ -19,15 +19,15 @@ patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 # get missing live session wallpaper 
 # cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
-# fetch updated pacman.conf
-#wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/etc/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/pacman.conf"
+# fetch updated mirrorlist
+wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO
 
 # Get mirrorlist for offline installs
 mkdir "airootfs/etc/pacman.d"
-wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
+wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 # use it also for building ISO
 cp "airootfs/etc/pacman.d/mirrorlist" "/etc/pacman.d/mirrorlist"
 

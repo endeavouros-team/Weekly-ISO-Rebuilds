@@ -1,0 +1,3 @@
+pacman -S paccache
+paccache -rk0
+pacman -Syu --noconfirm archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack

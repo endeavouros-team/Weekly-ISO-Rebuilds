@@ -1,17 +1,26 @@
 --- run_before_squashfs.sh	2024-06-25 13:26:31.000000000 +0200
-+++ run_before_squashfs.sh.patched	2024-07-14 23:25:25.463260149 +0200
-@@ -81,6 +81,14 @@
++++ run_before_squashfs.sh.patched	2024-08-18 19:59:02.743552224 +0200
+@@ -80,6 +80,23 @@
+ chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
  
  # CUSTOM FIXES
- 
 +# adding Move fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
++# removing xsane from [netinstall.yaml]
++
 +wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_online.conf.patch"
++
 +wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/ISO-hotfixes/main/settings_offline.conf.patch"
++
++wget -qN -P "/tmp/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/netinstall.yaml.patch"
++
 +patch "/etc/calamares/settings_online.conf" < "/tmp/settings_online.conf.patch"
 +patch "/etc/calamares/settings_offline.conf" < "/tmp/settings_offline.conf.patch"
++patch "/etc/calamares/modules/netinstall.yaml" < "/tmp/netinstall.yaml.patch"
++
 +rm "/tmp/settings_online.conf.patch"
 +rm "/tmp/settings_offline.conf.patch"
++rm "/tmp/netinstall.yaml.patch"
 +
+ 
  # install bash configs back into /etc/skel for offline install target
  cp -af "/root/filebackups/"{".bashrc",".bash_profile"} "/etc/skel/"
- 

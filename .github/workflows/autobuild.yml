@@ -27,11 +27,11 @@ jobs:
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS
         
-      - name: Update packages and keyring 
-        run: "pacman -Syu --noconfirm  archlinux-keyring"
+      - name: remove package cache
+        run: "paccache -rk0"
         
       - name: Install archiso
-        run: "pacman -S --noconfirm --needed archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack"
+        run: "pacman -S --noconfirm archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack"
         
       - name: preparations to build ISO
         run: bash prepare-action

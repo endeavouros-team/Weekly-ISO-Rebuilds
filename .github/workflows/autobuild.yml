@@ -28,10 +28,7 @@ jobs:
         run: bash add-EndeavourOS
         
       - name: remove package cache
-        run: "paccache -rk0"
-        
-      - name: Install archiso
-        run: "pacman -S --noconfirm archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack"
+        run:  bash archiso-install
         
       - name: preparations to build ISO
         run: bash prepare-action

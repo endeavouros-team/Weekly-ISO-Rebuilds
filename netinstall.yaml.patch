@@ -1,0 +1,10 @@
+--- netinstall.yaml	2024-06-23 17:30:46.000000000 +0200
++++ netinstall.yaml.patched	2024-08-18 19:53:47.848185106 +0200
+@@ -238,7 +238,6 @@
+     - hplip
+     - python-pyqt5
+     - python-reportlab
+-    - xsane
+     - cups
+     - cups-browsed
+     - cups-filters

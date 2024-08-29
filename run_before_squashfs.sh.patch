@@ -1,6 +1,6 @@
 --- run_before_squashfs.sh	2024-06-25 13:26:31.000000000 +0200
-+++ run_before_squashfs.sh.patched	2024-08-18 19:59:02.743552224 +0200
-@@ -80,6 +80,23 @@
++++ run_before_squashfs.sh.patched	2024-08-30 00:33:38.491482795 +0200
+@@ -80,6 +80,25 @@
  chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
  
  # CUSTOM FIXES
@@ -23,6 +23,6 @@
 +
 +# fixing non working copy paste for vmware installs:
 +wget -qN -O "/etc/calamares/scripts/chrooted_cleaner_script.sh" "https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/chrooted_cleaner_script.sh"
-+
+ 
  # install bash configs back into /etc/skel for offline install target
  cp -af "/root/filebackups/"{".bashrc",".bash_profile"} "/etc/skel/"

@@ -21,6 +21,8 @@
 +rm "/tmp/settings_offline.conf.patch"
 +rm "/tmp/netinstall.yaml.patch"
 +
- 
++# fixing non working copy paste for vmware installs:
++wget -qN -O "/etc/calamares/scripts/chrooted_cleaner_script.sh" https://raw.githubusercontent.com/endeavouros-team/calamares/calamares/data/eos/scripts/chrooted_cleaner_script.sh
++
  # install bash configs back into /etc/skel for offline install target
  cp -af "/root/filebackups/"{".bashrc",".bash_profile"} "/etc/skel/"

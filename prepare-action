@@ -11,7 +11,7 @@ tar -xf ${tag}.tar.gz
 mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
 # fetch  package for testing [kpmcore]
-wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://archive.archlinux.org/packages/k/kpmcore/kpmcore-24.05.2-1-x86_64.pkg.tar.zst"
+#wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://archive.archlinux.org/packages/k/kpmcore/kpmcore-24.05.2-1-x86_64.pkg.tar.zst"
 
 # patch run_before_squashfs.sh to apply patches that fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
 patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch

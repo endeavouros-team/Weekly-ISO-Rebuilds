@@ -12,6 +12,9 @@ https://github.com/endeavouros-team/EndeavourOS-ISO
 
 Will now include current needed hot-fixes on the ISO.
 
+## current remarks:
+* as of latest kpmcore is failing for automatic partition option, kpm cor eon ISO is downgraded to 24.05.2-1 [September 2024]
+
 You will find the ISOs here:
 
 https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases

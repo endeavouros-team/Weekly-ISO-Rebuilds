@@ -1,5 +1,7 @@
 # ISO Release Rebuilder
 
+# currently unused
+
 [![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
 
 

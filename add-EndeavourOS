@@ -3,9 +3,6 @@
 # setting up EndeavourOS repo:
 pacman-key --init && pacman -Syu --noconfirm && pacman -Syu --noconfirm base-devel 
 pacman -S --noconfirm archlinux-keyring wget
-#get modified pacman.conf
-wget https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/refs/heads/main/pacman.conf
-cp pacman.conf /etc/pacman.conf
 wget https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
 wget https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/master/endeavouros-mirrorlist/endeavouros-mirrorlist

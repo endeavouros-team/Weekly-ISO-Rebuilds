@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-pacman -S pacman-contrib
+pacman -Sy pacman-contrib paccache
 paccache -rk0
 pacman -Syu --noconfirm archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack

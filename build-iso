@@ -3,7 +3,7 @@
 cp "reset.sh.patch" "EndeavourOS-ISO/"
 cd "EndeavourOS-ISO"
 patch "reset.sh" < "reset.sh.patch"
-./mkarchiso -v "." 2>&1 | tee "eosiso_$(date -u +'%Y.%m.%d-%H:%M').log"
+./mkarchiso -v "." 2>&1 | tee "eosiso.log"
 ./reset.sh
 ls out/ > /tmp/isoname
 cp *.log out/

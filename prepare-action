@@ -20,7 +20,7 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 # cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
 # fetch updated mirrorlist
-#wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
+wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO

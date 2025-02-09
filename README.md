@@ -1,8 +1,7 @@
 # ISO Release Rebuilder
+**up again for Mercury Relase**
 
-# currently unused
-
-[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)]()
 
 
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
@@ -15,7 +14,6 @@ https://github.com/endeavouros-team/EndeavourOS-ISO
 Will now include current needed hot-fixes on the ISO.
 
 ## current remarks:
-* as of latest kpmcore is failing for automatic partition option, kpm cor eon ISO is downgraded to 24.05.2-1 [September 2024]
 
 You will find the ISOs here:
 

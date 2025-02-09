@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tag=24.06.1.2
+tag=25.02.1.5
 
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
@@ -13,30 +13,26 @@ mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 # fetch  package for testing [kpmcore]
 #wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://archive.archlinux.org/packages/k/kpmcore/kpmcore-24.05.2-1-x86_64.pkg.tar.zst"
 
-# patch run_before_squashfs.sh to apply patches that fstab after lukskeyfile job so crypttab is correct [settings_online.conf] [settings_offline.conf]
-patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
+# patch run_before_squashfs.sh
+#patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
 # get missing live session wallpaper 
 # cp livewall.png "EndeavourOS-ISO/airootfs/root/"
 
 # fetch updated mirrorlist
-wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
+#wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO
 
-#  mirrorlist: replaced mirror f4st.host with moson.org --> https://github.com/endeavouros-team/EndeavourOS-ISO/commit/a290732253c67da1a7200c4dba4c45284bb8d54
-rm mirrorlist
-wget "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
-
 # Get mirrorlist for offline installs
-mkdir "airootfs/etc/pacman.d"
-wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
+#mkdir "airootfs/etc/pacman.d"
+#wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 # use it also for building ISO
-cp "airootfs/etc/pacman.d/mirrorlist" "/etc/pacman.d/mirrorlist"
+#cp "airootfs/etc/pacman.d/mirrorlist" "/etc/pacman.d/mirrorlist"
 
 # Get wallpaper for installed system
-wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/master/backgrounds/endeavouros-wallpaper.png"
+#wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/endeavouros-theming/master/backgrounds/endeavouros-wallpaper.png"
 
 # Make sure build scripts are executable
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}

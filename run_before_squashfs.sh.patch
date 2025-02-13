@@ -1,0 +1,14 @@
+--- run_before_squashfs.sh	2025-02-08 09:09:32.000000000 +0100
++++ run_before_squashfs.sh.patched	2025-02-13 12:11:47.716026080 +0100
+@@ -94,8 +94,10 @@
+ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
+ 
+ # get needed packages for offline installs
++cat /etc/pacman.d/mirrorlist
++cat /etc/pacman.d/endeavouros-mirrorlist
+ mkdir -p "/usr/share/packages"
+-pacman -Syy
++pacman -Sy
+ pacman -Sw --noconfirm --cachedir "/usr/share/packages" grub eos-dracut kernel-install-for-dracut os-prober xf86-video-intel
+ 
+ # Clean pacman log and package cache

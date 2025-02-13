@@ -18,7 +18,7 @@ patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
 #use updated mirrorlist
 #wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
-cp "/etc/pacman.d/mirrorlist" "EndeavourOS-ISO/"
+cp mirrorlist "EndeavourOS-ISO/"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO

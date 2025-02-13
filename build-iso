@@ -4,7 +4,7 @@ cd "EndeavourOS-ISO"
 cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/endeavouros-mirrorlist
 patch "reset.sh" < "reset.sh.patch"
-cat 
+pacman -Syy
 ./mkarchiso -v "." 2>&1 | tee "eosiso.log"
 ./reset.sh
 ls out/ > /tmp/isoname

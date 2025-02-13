@@ -27,9 +27,6 @@ jobs:
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS
         
-      - name: remove package cache
-        run:  bash archiso-install
-        
       - name: preparations to build ISO
         run: bash prepare-action
         

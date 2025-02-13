@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 cp "reset.sh.patch" "EndeavourOS-ISO/"
 cd "EndeavourOS-ISO"
-cat /etc/pacman.d/mirrorlist
-cat /etc/pacman.d/endeavouros-mirrorlist
 patch "reset.sh" < "reset.sh.patch"
 pacman -Syy
 ./mkarchiso -v "." 2>&1 | tee "eosiso.log"

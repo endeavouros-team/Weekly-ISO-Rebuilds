@@ -5,8 +5,6 @@
 ##
 
 ## United States
-Server = http://distro.ibiblio.org/archlinux/$repo/os/$arch
-## United States
 Server = http://mirrors.sonic.net/archlinux/$repo/os/$arch
 ## United States
 Server = https://mirrors.xtom.com/archlinux/$repo/os/$arch

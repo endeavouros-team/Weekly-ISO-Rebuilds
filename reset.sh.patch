@@ -1,11 +1,11 @@
---- reset.sh	2024-02-18 13:23:33.405203256 +0100
-+++ reset.sh.patched	2024-02-23 10:09:47.803934078 +0100
-@@ -1,9 +1,10 @@
+--- reset.sh	2025-01-29 20:55:44.639558161 +0100
++++ reset.sh.patched	2025-02-13 19:09:17.177001785 +0100
+@@ -1,9 +1,7 @@
  #!/bin/sh
 -rm -rf "work" "out"
 +rm -rf "work"
  rm airootfs/root/packages/*.pkg.tar.zst
- rm airootfs/root/packages/*.pkg.tar.zst.sig
+-rm airootfs/root/packages/*.pkg.tar.zst.sig
  rm -rf airootfs/root/endeavouros-skel-liveuser/pkg
  rm airootfs/root/endeavouros-wallpaper.png
  rm airootfs/root/endeavouros-skel-liveuser/*.pkg.tar.zst

@@ -10,8 +10,8 @@ wget "https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/${ta
 tar -xf ${tag}.tar.gz
 mv EndeavourOS-ISO-${tag} EndeavourOS-ISO
 
-# fetch  package for testing [kpmcore]
-#wget -qN --show-progress -P "EndeavourOS-ISO/airootfs/root/packages/" "https://archive.archlinux.org/packages/k/kpmcore/kpmcore-24.05.2-1-x86_64.pkg.tar.zst"
+# patch reset.sh to run it for space saving before tarballing later:
+patch "EndeavourOS-ISO/reset.sh" < reset.sh.patch
 
 # patch run_before_squashfs.sh
 patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
@@ -25,6 +25,10 @@ cd EndeavourOS-ISO
 # Make sure build scripts are executable
 chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
+# Get mirrorlist for offline installs
+mkdir "airootfs/etc/pacman.d"
+wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
+
 # create build user
 #useradd -m -G wheel -s /bin/bash build
 useradd -m build
@@ -32,20 +36,6 @@ printf "build ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
         chown -R build:build ./
 
 # Build liveuser skel
-get_pkg() {
-    pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages"
-}
-
-get_pkg "eos-settings-plasma"
-
-get_pkg() {
-    sudo pacman -Syw "$1" --noconfirm --cachedir "airootfs/root/packages" \
-    && sudo chown build:build "airootfs/root/packages/"*".pkg.tar"*
-}
-
-get_pkg "eos-settings-plasma"
-
-# Build liveuser skel
+chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
 cd "airootfs/root/endeavouros-skel-liveuser"
-sudo -u build bash makepkg -f
-#sudo -u build makepkg -f
+sudo -u build makepkg -f

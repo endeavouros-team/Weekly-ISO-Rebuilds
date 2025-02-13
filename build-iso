@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-cp "reset.sh.patch" "EndeavourOS-ISO/"
 cd "EndeavourOS-ISO"
-patch "reset.sh" < "reset.sh.patch"
-pacman -Syy
 ./mkarchiso -v "." 2>&1 | tee "eosiso.log"
-./reset.sh
 ls out/ > /tmp/isoname
-cp *.log out/
+cp eosiso.log out/
+./reset.sh
 cd out/
 isoname=$(cat /tmp/isoname)
 sha512sum $isoname > $isoname.sha512sum

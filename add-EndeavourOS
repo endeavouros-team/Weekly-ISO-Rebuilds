@@ -6,15 +6,16 @@ wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/pac
 cp pacman.conf /etc/pacman.conf
 wget https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/master/endeavouros-mirrorlist/endeavouros-mirrorlist
 cp endeavouros-mirrorlist /etc/pacman.d/endeavouros-mirrorlist
+cp mirrorlist /etc/pacman.d/mirrorlist
 pacman-key --recv-key 0F20FADC599D1C46EB556455AED8858E4B9813F1 --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 0F20FADC599D1C46EB556455AED8858E4B9813F1
 pacman-key --recv-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F --keyserver keyserver.ubuntu.com && pacman-key --lsign-key 497AF50C92AD2384C56E1ACA003DB8B0CB23504F
 pacman-key --init
 pacman -Syy --noconfirm endeavouros-keyring 
 pacman -S --noconfirm endeavouros-mirrorlist
-pacman -S --noconfirm reflector eos-rankmirrors
-reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
-eos-rankmirrors —verbose —sort rate
+#pacman -S --noconfirm reflector eos-rankmirrors
+#reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
+#eos-rankmirrors —verbose —sort rate
 #install archiso
-#pacman -Sy pacman-contrib paccache
-#paccache -rk0
+pacman -Sy pacman-contrib paccache
+paccache -rk0
 pacman -Syu --noconfirm archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack

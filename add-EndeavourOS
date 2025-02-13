@@ -13,6 +13,6 @@ pacman-key --init
 pacman -Syy --noconfirm endeavouros-keyring 
 pacman -S --noconfirm endeavouros-mirrorlist
 #install archiso
-pacman -Sy --noconfirm --needed pacman-contrib paccache
+pacman -Sy --noconfirm --needed pacman-contrib
 paccache -rk0
 pacman -Syu --noconfirm --needed archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack

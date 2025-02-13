@@ -38,4 +38,4 @@ printf "build ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
 # Build liveuser skel
 chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
 cd "airootfs/root/endeavouros-skel-liveuser"
-sudo -u build makepkg -f
+sudo -u build bash makepkg -f

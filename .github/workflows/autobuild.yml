@@ -32,9 +32,6 @@ jobs:
         
       - name: Build ISO
         run: bash build-iso
-
-      - name: tarball relase files
-        run: "cp EndeavourOS-ISO/*.log EndeavourOS-ISO/out/"
          
       - name: Upload binaries to release
         uses: "marvinpinto/action-automatic-releases@latest"

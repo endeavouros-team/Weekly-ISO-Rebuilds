@@ -1,11 +1,22 @@
---- run_before_squashfs.sh	2025-02-13 20:51:54.885342244 +0100
-+++ run_before_squashfs.sh.patched	2025-02-13 20:52:41.857337213 +0100
-@@ -72,6 +72,8 @@
- echo "----- end of content of /root/packages -----"
+--- run_before_squashfs.sh	2025-02-18 19:38:37.151917499 +0100
++++ run_before_squashfs.sh.patched	2025-02-18 19:46:58.849863763 +0100
+@@ -72,6 +72,9 @@
  pacman -U --noconfirm --needed -- "/root/packages/"*".pkg.tar.zst"
  rm -rf "/root/packages/"
+ 
 +# reinstall eos-settings-plasma for offline installs:
 +pacman -S --noconfirm eos-settings-plasma
- 
++
  # Enable systemd services
  # --> now in airootfs/etc/systemd/system/multi-user.target.wants
+ #systemctl enable NetworkManager.service systemd-timesyncd.service bluetooth.service firewalld.service
+@@ -93,6 +96,9 @@
+ mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
+ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
+ 
++# remove xwaylandvideobridge from kde packages
++patch "/etc/calamares/modules/packagechooser.conf" < "/root/packagechooser.conf.patch" 
++
+ # get needed packages for offline installs
+ mkdir -p "/usr/share/packages"
+ pacman -Syy

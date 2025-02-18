@@ -16,6 +16,12 @@ patch "EndeavourOS-ISO/reset.sh" < reset.sh.patch
 # patch run_before_squashfs.sh
 patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
+# patch packages.x86_64
+patch "EndeavourOS-ISO/packages.x86_64" < packages.x86_64.patch
+
+# add packagechooser.conf.patch to ISO structure to run inside ISO build
+cp packagechooser.conf.patch "EndeavourOS-ISO/airootfs/root/packagechooser.conf.patch"
+
 #use updated mirrorlist
 wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 

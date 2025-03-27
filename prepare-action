@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-tag=25.02.1.5
+tag=25.02.2.3
 
 # clone ISO sources and join the path:
 #git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
@@ -18,9 +18,6 @@ patch "EndeavourOS-ISO/run_before_squashfs.sh" < run_before_squashfs.sh.patch
 
 # patch packages.x86_64
 patch "EndeavourOS-ISO/packages.x86_64" < packages.x86_64.patch
-
-# add packagechooser.conf.patch to ISO structure to run inside ISO build
-cp packagechooser.conf.patch "EndeavourOS-ISO/airootfs/root/packagechooser.conf.patch"
 
 #use updated mirrorlist
 wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"

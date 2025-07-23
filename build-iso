@@ -7,6 +7,6 @@ cp eosiso.log out/
 cd out/
 isoname=$(cat /tmp/isoname)
 sha512sum $isoname > $isoname.sha512sum
-split -b1024M $isoname $isoname.split-
+split -n 4 $isoname $isoname.split-
 files=$(ls)
 echo $files

@@ -22,12 +22,12 @@ https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
 Check for latest release there!
 
 
-Download this 3 files into one folder:
+Download this 4 files into one folder:
 
 * EndeavourOS_Releasename-Date-x86_64.iso.split-aa
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ab
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ac
-
+* EndeavourOS_Releasename-Date-x86_64.iso.split-ad
 and run this to create ISO (combine):
 
 ```

@@ -45,5 +45,5 @@ jobs:
                  EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ab
                  EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ac
                  EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.sha512sum
-                 eosiso.log
+                 EndeavourOS-ISO/out/eosiso.log
           id: "weekly-iso-rebuild"

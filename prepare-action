@@ -42,3 +42,7 @@ printf "build ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
 chown -R build:build "airootfs/root/endeavouros-skel-liveuser"
 cd "airootfs/root/endeavouros-skel-liveuser"
 sudo -u build bash makepkg -f
+
+# Get wallpaper for installed system
+wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/Branding/master/backgrounds/endeavouros-wallpaper.png"
+

@@ -28,6 +28,7 @@ Download this 4 files into one folder:
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ab
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ac
 * EndeavourOS_Releasename-Date-x86_64.iso.split-ad
+
 and run this to create ISO (combine):
 
 ```

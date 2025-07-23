@@ -13,13 +13,11 @@ https://github.com/endeavouros-team/EndeavourOS-ISO
 
 Will now include current needed hot-fixes on the ISO.
 
-## current remarks:
+## how to use this?
 
-You will find the ISOs here:
+You will find the ISO here:
 
 https://github.com/endeavouros-team/Weekly-ISO-Rebuilds/releases
-
-Check for latest release there!
 
 
 Download this 4 files into one folder:

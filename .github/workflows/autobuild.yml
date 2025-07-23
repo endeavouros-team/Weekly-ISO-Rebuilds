@@ -47,3 +47,6 @@ jobs:
                  EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.sha512sum
                  EndeavourOS-ISO/out/eosiso.log
           id: "weekly-iso-rebuild"
+
+      - name: Upload server_DEVEL
+        run: "curl -g -k -T EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso -u ${{secrets.SERVER_STRING_DEVEL}}"

@@ -15,7 +15,7 @@
  rm -rf "/var/cache/pacman/pkg/"
  
 +# package changes for packagechoooser.conf (calamares)
-+wget -P /etc/calamares/modules "https://raw.githubusercontent.com/endeavouros-team/calamares/refs/heads/calamares/data/eos/modules/packagechooser.conf"
++wget -O /etc/calamares/modules/packagechooser.conf "https://raw.githubusercontent.com/endeavouros-team/calamares/refs/heads/calamares/data/eos/modules/packagechooser.conf"
  
  #create package versions file
  pacman -Qs | grep "/calamares " | cut -c7- > iso_package_versions

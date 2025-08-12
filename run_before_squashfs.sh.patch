@@ -1,5 +1,5 @@
---- run_before_squashfs.sh	2025-03-27 20:17:41.870734336 +0100
-+++ run_before_squashfs.sh.patched	2025-03-27 20:17:28.671735750 +0100
+--- run_before_squashfs.sh	2025-03-19 12:22:55.000000000 +0100
++++ run_before_squashfs.sh.patched	2025-08-12 07:14:47.381197443 +0200
 @@ -73,6 +73,9 @@
  pacman -U --noconfirm --needed -- "/root/packages/"*".pkg.tar.zst"
  rm -rf "/root/packages/"
@@ -10,3 +10,12 @@
  # Enable systemd services
  # --> now in airootfs/etc/systemd/system/multi-user.target.wants
  #systemctl enable NetworkManager.service systemd-timesyncd.service bluetooth.service firewalld.service
+@@ -104,6 +107,8 @@
+ # pacman -Scc seem to fail so:
+ rm -rf "/var/cache/pacman/pkg/"
+ 
++# package changes for packagechoooser.conf (calamares)
++wget -P /etc/calamares/modules "https://raw.githubusercontent.com/endeavouros-team/calamares/refs/heads/calamares/data/eos/modules/packagechooser.conf"
+ 
+ #create package versions file
+ pacman -Qs | grep "/calamares " | cut -c7- > iso_package_versions

@@ -1,5 +1,5 @@
 # ISO Release Rebuilder
-**up again for Mercury Relase**
+**down as of new Release is in the Launch Base**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)]()
 

@@ -37,6 +37,9 @@ wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/
 
 # create build user
 #useradd -m -G wheel -s /bin/bash build
+# downgrade squashfs-tools [nov 2025] latest version (4.7.3-1) segfaults on image creation
+pacman -Syu --noconfirm
+pacman -U --noconfirm https://archive.archlinux.org/packages/s/squashfs-tools/squashfs-tools-4.7.2-1-x86_64.pkg.tar.zst
 useradd -m build
 printf "build ALL=NOPASSWD: ALL\n" | tee -a /etc/sudoers
         chown -R build:build ./

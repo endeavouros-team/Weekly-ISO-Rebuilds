@@ -1,64 +1,53 @@
 name: Weekly EndeavourOS ISO rebuilds
 
 on:
-schedule:
-- cron: "0 0 * * 5" # einmal pro Woche
-workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 5" #once a week
+    #- cron : "0 */8 * * *" #every 8 hours (3 per day)
+  workflow_dispatch:
 
 jobs:
-build:
-runs-on: ubuntu-latest
-timeout-minutes: 180
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
 
-permissions:
-  contents: write
+    permissions:
+      contents: write
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v2
+    container:
+      image: archlinux:latest
+      options: --privileged
 
-  - name: Install dependencies
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y arch-install-scripts debootstrap qemu-utils squashfs-tools curl git
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set current date as environment variable
+        run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+                      
+      - name: Add EndeavourOS Repo
+        run: bash add-EndeavourOS
+        
+      - name: preparations to build ISO
+        run: bash prepare-action
+        
+      - name: Build ISO
+        run: bash build-iso
+         
+      - name: Upload binaries to release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.ACCESS_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Weekly Rebuild ${{ env.NOW }}"
+          files: |
+                 EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-aa
+                 EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ab
+                 EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ac
+                 EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ad
+                 EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.sha512sum
+                 EndeavourOS-ISO/out/eosiso.log
+          id: "weekly-iso-rebuild"
 
-  - name: Create Arch chroot
-    run: |
-      sudo mkdir -p /mnt/arch
-      sudo pacstrap /mnt/arch base base-devel archiso git
-
-  - name: Prepare build environment
-    run: |
-      sudo mkdir -p /mnt/arch/work
-      sudo cp -r $GITHUB_WORKSPACE/* /mnt/arch/work
-
-  - name: Build ISO
-    run: |
-      sudo arch-chroot /mnt/arch /bin/bash -c "
-        cd /work &&
-        bash prepare-action &&
-        bash build-iso
-      "
-
-  - name: Set current date as environment variable
-    run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
-
-  - name: Upload binaries to release
-    uses: marvinpinto/action-automatic-releases@latest
-    with:
-      repo_token: "${{ secrets.ACCESS_TOKEN }}"
-      automatic_release_tag: "latest"
-      prerelease: false
-      title: "Weekly Rebuild ${{ env.NOW }}"
-      files: |
-        EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-aa
-        EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ab
-        EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ac
-        EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.split-ad
-        EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso.sha512sum
-        EndeavourOS-ISO/out/eosiso.log
-      id: "weekly-iso-rebuild"
-
-  - name: Upload ISO to remote server
-    run: |
-      curl -g -k -T EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso -u ${{secrets.SERVER_STRING_WEEKLY}}
+      - name: Upload server_DEVEL
+        run: "curl -g -k -T EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso -u ${{secrets.SERVER_STRING_WEEKLY}}"

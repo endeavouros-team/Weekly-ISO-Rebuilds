@@ -9,32 +9,30 @@ jobs:
 build:
 runs-on: ubuntu-latest
 timeout-minutes: 180
+
+```
 permissions:
   contents: write
 
 steps:
-  # 1. Checkout repository
-  - uses: actions/checkout@v2
+  - name: Checkout repository
+    uses: actions/checkout@v2
 
-  # 2. Install required packages for chroot & ISO build
   - name: Install dependencies
     run: |
       sudo apt-get update
       sudo apt-get install -y arch-install-scripts debootstrap qemu-utils squashfs-tools curl git
 
-  # 3. Create Arch chroot environment
   - name: Create Arch chroot
     run: |
       sudo mkdir -p /mnt/arch
       sudo pacstrap /mnt/arch base base-devel archiso git
 
-  # 4. Mount work directory into chroot
   - name: Prepare build environment
     run: |
       sudo mkdir -p /mnt/arch/work
       sudo cp -r $GITHUB_WORKSPACE/* /mnt/arch/work
 
-  # 5. Run ISO build inside Arch chroot
   - name: Build ISO
     run: |
       sudo arch-chroot /mnt/arch /bin/bash -c "
@@ -43,11 +41,9 @@ steps:
         bash build-iso
       "
 
-  # 6. Set current date for release naming
   - name: Set current date as environment variable
     run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
 
-  # 7. Upload release to GitHub
   - name: Upload binaries to release
     uses: marvinpinto/action-automatic-releases@latest
     with:
@@ -64,7 +60,7 @@ steps:
         EndeavourOS-ISO/out/eosiso.log
       id: "weekly-iso-rebuild"
 
-  # 8. Optional: Upload ISO to remote server
-  - name: Upload server_DEVEL
+  - name: Upload ISO to remote server
     run: |
       curl -g -k -T EndeavourOS-ISO/out/EndeavourOS_Mercury-Neo-${{ env.NOW }}-x86_64.iso -u ${{secrets.SERVER_STRING_WEEKLY}}
+```

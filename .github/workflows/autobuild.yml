@@ -9,7 +9,6 @@ jobs:
 build:
 runs-on: ubuntu-latest
 timeout-minutes: 180
-
 permissions:
   contents: write
 

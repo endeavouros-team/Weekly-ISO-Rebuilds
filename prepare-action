@@ -20,7 +20,7 @@ patch "EndeavourOS-ISO/reset.sh" < reset.sh.patch
 #patch "EndeavourOS-ISO/packages.x86_64" < packages.x86_64.patch
 
 #use updated mirrorlist
-wget -qN --show-progress -P "EndeavourOS-ISO/" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
+wget -o "EndeavourOS-ISO/mirrorlist" "https://raw.githubusercontent.com/endeavouros-team/Weekly-ISO-Rebuilds/main/mirrorlist"
 
 # run preperations inside ISO structure
 cd EndeavourOS-ISO
@@ -30,13 +30,13 @@ chmod +x "./"{"mkarchiso","run_before_squashfs.sh"}
 
 # Get mirrorlist for offline installs
 mkdir "airootfs/etc/pacman.d"
-wget -qN --show-progress -P "airootfs/etc/pacman.d/" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
+wget -o "airootfs/etc/pacman.d/mirrorlist" "https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/mirrorlist"
 
 # Get eos-settings-plasma for Live session and offline install
 pacman -Syw eos-settings-plasma --noconfirm --cachedir "airootfs/root/packages"
 
 # Get wallpaper for installed system
-wget -qN --show-progress -P "airootfs/root/" "https://raw.githubusercontent.com/endeavouros-team/Branding/master/backgrounds/endeavouros-wallpaper.png"
+wget -o "airootfs/root/endeavouros-wallpaper.png" "https://raw.githubusercontent.com/endeavouros-team/Branding/master/backgrounds/endeavouros-wallpaper.png"
 
 # create build user
 #useradd -m -G wheel -s /bin/bash build

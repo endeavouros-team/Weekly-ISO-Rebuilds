@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 cd "EndeavourOS-ISO"
-echo "-----> systemsiz:"
+echo "-----> systemsize:"
 df -h
 echo "<-----"
 ./mkarchiso -v "." 2>&1 | tee "eosiso.log"
 ls out/ > /tmp/isoname
 cp eosiso.log out/
-echo "-----> systemsiz:"
+echo "-----> systemsize:"
 df -h
 echo "<-----"
 ./reset.sh
-echo "-----> systemsiz:"
+echo "-----> systemsize:"
 df -h
 echo "<-----"
 cd out/

@@ -1,8 +1,8 @@
 # create the file to be used as tmp 
 mkdir -p /mnt/tmp_on_disk
 chmod 1777 /mnt/tmp_on_disk
-sudo umount /tmp
-sudo mount --bind /mnt/tmp_on_disk /tmp
-sudo chmod 1777 /tmp
-sudo systemctl mask tmp.mount
-sudo systemctl stop tmp.mount
+umount /tmp
+mount --bind /mnt/tmp_on_disk /tmp
+chmod 1777 /tmp
+systemctl mask tmp.mount
+systemctl stop tmp.mount

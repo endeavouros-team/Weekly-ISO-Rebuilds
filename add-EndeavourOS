@@ -20,7 +20,8 @@ pacman -Syu --noconfirm --needed archlinux-keyring archiso git squashfs-tools wg
 echo "-----> systemsize:"
 df -h
 echo "<-----"
-rm -rf "/var/cache/pacman/pkg/"
+du -sh /var/cache/pacman/pkg/
+rm -rf /var/cache/pacman/pkg/
 echo "-----> systemsize:"
 df -h
 echo "<-----"

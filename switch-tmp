@@ -1,6 +1,0 @@
-# create the file to be used as tmp 
-mkdir -p /mnt/tmp_on_disk
-chmod 1777 /mnt/tmp_on_disk
-umount /tmp
-mount --bind /mnt/tmp_on_disk /tmp
-chmod 1777 /tmp

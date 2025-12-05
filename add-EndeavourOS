@@ -18,6 +18,6 @@ reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
 eos-rankmirrors —verbose —sort rate
 #install archiso
 pacman -Syu --noconfirm --needed archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack
-echo "-----> systemsiz:"
+echo "-----> systemsize:"
 df -h
 echo "<-----"

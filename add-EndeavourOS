@@ -2,7 +2,7 @@
 # setting up EndeavourOS repo:
 pacman-key --init && pacman -Syu --noconfirm && pacman -Syu base-devel --noconfirm
 pacman -Sy --noconfirm --needed archlinux-keyring wget
-wget -qN --show-progress -P "/etc/pacman.conf" https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/pacman.conf
+wget -P "/etc/pacman.conf" https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/pacman.conf
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-ISO/main/airootfs/etc/makepkg.conf
 cp makepkg.conf /etc/makepkg.conf
 wget https://raw.githubusercontent.com/endeavouros-team/PKGBUILDS/master/endeavouros-mirrorlist/endeavouros-mirrorlist
@@ -17,9 +17,6 @@ reflector --age 2 --number 23 --save /etc/pacman.d/mirrorlist
 eos-rankmirrors —verbose —sort rate
 #install archiso
 pacman -Syu --noconfirm --needed archlinux-keyring archiso git squashfs-tools wget sudo base-devel curl lftp networkmanager pipewire-jack
-echo "-----> systemsize:"
-df -h
-echo "<-----"
 du -sh /var/cache/pacman/pkg/
 rm -rf /var/cache/pacman/pkg/
 echo "-----> systemsize:"

@@ -21,14 +21,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: switch tmp to file
-        run: bash switch-tmp
-      
       - name: Set current date as environment variable
         run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
                       
       - name: Add EndeavourOS Repo
         run: bash add-EndeavourOS
+
+      - name: switch tmp to file
+        run: bash switch-tmp
         
       - name: preparations to build ISO
         run: bash prepare-action

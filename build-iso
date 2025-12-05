@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
 cd "EndeavourOS-ISO"
+echo "-----> systemsiz:"
+df -h
+echo "<-----"
 ./mkarchiso -v "." 2>&1 | tee "eosiso.log"
 ls out/ > /tmp/isoname
 cp eosiso.log out/
+echo "-----> systemsiz:"
+df -h
+echo "<-----"
 ./reset.sh
+echo "-----> systemsiz:"
+df -h
+echo "<-----"
 cd out/
 isoname=$(cat /tmp/isoname)
 sha512sum $isoname > $isoname.sha512sum

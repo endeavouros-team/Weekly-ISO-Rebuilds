@@ -9,7 +9,7 @@ cp eosiso.log out/
 echo "-----> systemsize:"
 df -h
 echo "<-----"
-./reset.sh
+rm -rf "work"
 echo "-----> systemsize:"
 df -h
 echo "<-----"

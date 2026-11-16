@@ -1,5 +1,5 @@
 # ISO Release Rebuilder
-**down as of new Release is in the Launch Base**
+**down as of refactoring CI and runners**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)]()
 

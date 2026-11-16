@@ -1,7 +1,7 @@
 # ISO Release Rebuilder
 **down as of refactoring CI and runners**
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2026.svg)]()
 
 
 This is an automatic Release ISO rebuilder it will build current released ISO once a week.
